@@ -3,7 +3,7 @@
 #include <time.h>
 #include <array>
 using namespace std;
-int NUM_BETS = 5;
+const int NUM_BETS = 5;
 bool players_bets[] = {true, true, true, false, false}; //Update to test players bets
 /*
  ***BET KEY***
