@@ -3,40 +3,48 @@
 #include <time.h>
 using namespace std;
 
+bool players_bets[5] = {true, true, true, false, true}; //Update this as bets are added
+
 int roll_dice() {
   int roll1 = rand() % 6 + 1;
   int roll2 = rand() % 6 + 1;
   return roll1 + roll2;
 }
 
-void increment(int arr[], int pos){
-  arr[pos]++;
+void print_players_bets(){
+  int bets_array_length = sizeof(players_bets) / sizeof(players_bets[0]);
+  for (int i = 0; i < bets_array_length; i++){
+    std::cout << players_bets[i] << " ";
+  }
+  std:cout <<"\n";
 }
 
+void setBet(int bet_index){
+  players_bets[bet_index] = true;
+}
+
+void clearBet(int bet_index){
+  players_bets[bet_index] = false;
+}
+
+
+ /* MAIN FUNCTION BELOW */
 int main(){
   srand(time(NULL));
-  int array[13]={0};
-  int numRolls=36000;
+  print_players_bets();
+  setBet(3);
+  print_players_bets();
+  clearBet(0);
+  print_players_bets();
+
+  /*
   int roll{};
-  
-  for(int i = 0; i < numRolls; i++){
-  roll = roll_dice();
-  increment(array, roll);
-  }
-
-  std::cout << "Sum\tFrequency\tPercentage" << std::endl;
-
-  for(int i=2; i<=12; i++){
-    double percent = (double) array[i]/numRolls;
-    percent *= 100;
-    cout << i << "\t" << array[i] << "\t\t" << percent << endl;
-  }
-
-  std::cout << "\n***TEST NUMBER TWO**";
+  std::cout << "\n***DICE TEST**";
   for(int j = 0; j < 20; j++){
     roll = roll_dice();
     std::cout << roll << endl;
   }
+  */
 
 return 0;
 }
