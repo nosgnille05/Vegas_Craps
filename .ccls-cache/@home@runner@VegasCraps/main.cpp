@@ -3,8 +3,8 @@
 #include <time.h>
 #include <array>
 using namespace std;
-
-bool players_bets[5] = {true, false, false, false, false}; //Update this as bets are added
+int NUM_BETS = 5;
+bool players_bets[] = {true, false, false, false, false}; //Update this as bets are added
 /*
  ***BET KEY***
 index 0: Field
@@ -35,22 +35,21 @@ int roll_dice() {
 }
 
 void print_bets(bool array[]){
-  int array_length = sizeof(array) / sizeof(array[0]);
-  for (int i = 0; i < array_length; i++){
+  for (int i = 0; i < NUM_BETS; i++){
     std::cout << array[i] << " ";
   }
   std:cout <<"\n";
 }
 
-std::array <bool,5> check_roll(bool array[], int players_dice_roll){
-  bool winning_bets[5] = {false};
+bool * check_roll(bool array[], int players_dice_roll){
+  static bool winning_bets[5] = {false};
   if (array[0] == true){
     if (is_field_roll(players_dice_roll)){ 
       winning_bets[0] = true;
       }
   }
   
-  return winning_bets[];
+  return winning_bets;
 }
 
 
