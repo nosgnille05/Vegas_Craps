@@ -4,12 +4,12 @@
 #include <array>
 using namespace std;
 int NUM_BETS = 5;
-bool players_bets[] = {true, false, false, false, false}; //Update this as bets are added
+bool players_bets[] = {true, true, true, false, false}; //Update to test players bets
 /*
  ***BET KEY***
-index 0: Field
-index 1: n/a
-index 2: n/a
+index 0: Basic Field (3,4,9,10,11)
+index 1: Two Field (2)
+index 2: Twelve Field (12)
 index 3: n/a
 index 4: n/a
 */
@@ -21,13 +21,24 @@ void clearBet(int bet_index){
   players_bets[bet_index] = false;
 }
 
-bool is_field_roll(int dice_roll){
-  if (dice_roll == 2 || dice_roll == 3 || dice_roll == 4 || dice_roll == 9 || dice_roll == 10 || dice_roll == 11 || dice_roll == 12){
+bool is_basic_field_roll(int dice_roll){
+  if (dice_roll == 3 || dice_roll == 4 || dice_roll == 9 || dice_roll == 10 || dice_roll == 11){
     return true;
   }
   else return false;
 }
-
+bool is_two_field_roll(int dice_roll){
+  if (dice_roll == 2){
+    return true;
+  }
+  else return false;
+}
+bool is_twelve_field_roll(int dice_roll){
+  if (dice_roll == 12){
+    return true;
+  }
+  else return false;
+}
 int roll_dice() {
   int roll1 = rand() % 6 + 1;
   int roll2 = rand() % 6 + 1;
@@ -41,11 +52,24 @@ void print_bets(bool array[]){
   std:cout <<"\n";
 }
 
-bool * check_roll(bool array[], int players_dice_roll){
+// Add check for every new bet
+bool * check_roll(bool array[], int players_dice_roll){ //only checks bets which player has live
   static bool winning_bets[5] = {false};
   if (array[0] == true){
-    if (is_field_roll(players_dice_roll)){ 
+    if (is_basic_field_roll(players_dice_roll)){ 
       winning_bets[0] = true;
+      }
+  }
+  if (array[1] == true){ 
+    if (is_two_field_roll(players_dice_roll)){ 
+      winning_bets[1] = true;
+      winning_bets[0] = false;
+      }
+  }
+  if (array[2] == true){
+    if (is_twelve_field_roll(players_dice_roll)){ 
+      winning_bets[2] = true;
+      winning_bets[0] = false;
       }
   }
   
@@ -57,16 +81,18 @@ bool * check_roll(bool array[], int players_dice_roll){
 int main(){
   srand(time(NULL));
   int players_roll = roll_dice();
+  //int players_roll = 11;
+  std::cout << players_roll << endl;
   print_bets(check_roll(players_bets, players_roll));
 
   /*
-  int roll{};
-  std::cout << "\n***DICE TEST**";
+  std::cout << "\n***TEST**\n";
   for(int j = 0; j < 20; j++){
-    roll = roll_dice();
-    std::cout << roll << endl;
+    print_bets(check_roll(players_bets, roll_dice()));
   }
   */
+
+  
 
 return 0;
 }
