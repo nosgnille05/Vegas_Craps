@@ -13,14 +13,16 @@ index 2: Twelve Field (12)
 index 3: n/a
 index 4: n/a
 */
+
+// Bet Setting
 void setBet(int bet_index){
   players_bets[bet_index] = true;
 }
-
 void clearBet(int bet_index){
   players_bets[bet_index] = false;
 }
 
+// Bet Types
 bool is_basic_field_roll(int dice_roll){
   if (dice_roll == 3 || dice_roll == 4 || dice_roll == 9 || dice_roll == 10 || dice_roll == 11){
     return true;
@@ -39,12 +41,15 @@ bool is_twelve_field_roll(int dice_roll){
   }
   else return false;
 }
+
+//Roll Dice
 int roll_dice() {
   int roll1 = rand() % 6 + 1;
   int roll2 = rand() % 6 + 1;
   return roll1 + roll2;
 }
 
+// Temp for printing bet arrays
 void print_bets(bool array[]){
   for (int i = 0; i < NUM_BETS; i++){
     std::cout << array[i] << " ";
@@ -52,8 +57,8 @@ void print_bets(bool array[]){
   std:cout <<"\n";
 }
 
-// Add check for every new bet
-bool * check_roll(bool array[], int players_dice_roll){ //only checks bets which player has live
+// Check players bet against dice, only checks bets which player has live
+bool * check_roll(bool array[], int players_dice_roll){ 
   static bool winning_bets[5] = {false};
   if (array[0] == true){
     if (is_basic_field_roll(players_dice_roll)){ 
@@ -91,8 +96,6 @@ int main(){
     print_bets(check_roll(players_bets, roll_dice()));
   }
   */
-
-  
 
 return 0;
 }
