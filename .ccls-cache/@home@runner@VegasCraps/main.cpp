@@ -4,7 +4,7 @@
 #include <array>
 using namespace std;
 const int NUM_BETS = 5;
-bool players_bets[] = {true, true, true, false, false}; //Update to test players bets
+double players_bets[5][2] = {{1, 10}, {1, 10}, {1, 10}, {0, 0}, {0, 0}}; //Update to test players bets
 /*
  ***BET KEY***
 index 0: Basic Field (3,4,9,10,11)
@@ -58,20 +58,20 @@ void print_bets(bool array[]){
 }
 
 // Check players bet against dice, only checks bets which player has live
-bool * check_roll(bool array[], int players_dice_roll){ 
-  static bool winning_bets[5] = {false};
-  if (array[0] == true){
+double * check_roll(double players_bets_arr[5][2], int players_dice_roll){ 
+  static bool winning_bets[5][2] = {false};
+  if (players_bets_arr[0][0] == 1){
     if (is_basic_field_roll(players_dice_roll)){ 
       winning_bets[0] = true;
       }
   }
-  if (array[1] == true){ 
+  if (players_bets_arr[1][0] == 1){ 
     if (is_two_field_roll(players_dice_roll)){ 
       winning_bets[1] = true;
       winning_bets[0] = false;
       }
   }
-  if (array[2] == true){
+  if (players_bets_arr[2][0] == 1){
     if (is_twelve_field_roll(players_dice_roll)){ 
       winning_bets[2] = true;
       winning_bets[0] = false;
@@ -79,6 +79,24 @@ bool * check_roll(bool array[], int players_dice_roll){
   }
   
   return winning_bets;
+}
+
+void payout_bets_on_checked_roll(bool checked_roll_arr[]){
+  if (checked_roll_arr[0] == true){ //Basic Field Pays 1:1
+    
+  }
+  if (checked_roll_arr[1] == true){ //Two Field Pays 2:1
+
+  }
+  if (checked_roll_arr[2] == true){ //Twelve Field Pays 3:1
+
+  }
+  if (checked_roll_arr[4] == true){
+
+  }
+  if (checked_roll_arr[5] == true){
+
+  }
 }
 
 
