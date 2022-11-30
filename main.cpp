@@ -33,10 +33,6 @@ double ask_for_bet_amount(){
   return players_bet;
 }
 
-void update_players_bets(double playr_bet_amount, double bet_idx){
-  for
-}
-
 // Bet Setting
 void setBet(int bet_index){
   players_bets[bet_index][0] = 1;
@@ -139,7 +135,6 @@ int main(){
   bool game_on = true;
   //while (game_on){
     players_bet_amount = ask_for_bet_amount();
-    update_players_bets(players_bet_amount);
     cout << players_roll << endl;
     check_roll(players_bets, players_roll);
     print_bets(players_bets);
