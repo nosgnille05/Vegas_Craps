@@ -14,8 +14,6 @@ double players_bets[5][2] = {{1, players_bet_amount}, {1, players_bet_amount}, {
 double winning_bets[NUM_BETS][2] = {{0, 2}, {0, 3}, {0, 4}, {0, 0}, {0, 0}};
 
 /*
-
-
  ***BET KEY***
 index 0: Basic Field (3,4,9,10,11)
 index 1: Two Field (2)
