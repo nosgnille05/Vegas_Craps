@@ -39,6 +39,7 @@ void setBet(int bet_index){
 }
 void clearBet(int bet_index){
   players_bets[bet_index][0] = 0;
+  
 }
 
 // Bet Types
