@@ -8,6 +8,7 @@
 #include <cstring>
 using namespace std;
 const int NUM_BETS = 5;
+
 double players_bank = 10;
 double players_bet_amount{};
 double players_bets[5][2] = {{1, players_bet_amount}, {1, players_bet_amount}, {1, players_bet_amount}, {0, players_bet_amount}, {0, players_bet_amount}}; //Update to test players bets
