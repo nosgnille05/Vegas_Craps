@@ -139,7 +139,6 @@ int main(){
     check_roll(players_bets, players_roll);
     print_bets(players_bets);
 
-  
     print_bets(winning_bets);
     payout_bets_on_checked_roll(winning_bets);
     cout << "Players Bank: " << players_bank << endl;
