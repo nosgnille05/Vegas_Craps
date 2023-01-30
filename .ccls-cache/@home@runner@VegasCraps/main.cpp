@@ -63,7 +63,6 @@ bool is_twelve_field_roll(int dice_roll){
 
 //Roll Dice
 
-
 int roll_dice() {
   int roll1 = rand() % 6 + 1;
   int roll2 = rand() % 6 + 1;
