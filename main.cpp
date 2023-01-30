@@ -69,6 +69,8 @@ int roll_dice() {
 }
 
 // Temp for printing bet arrays
+
+
 void print_bets(double array[NUM_BETS][2]){
   for (int i = 0; i < NUM_BETS; i++){
     for (int j = 0; j < 2; j++){
