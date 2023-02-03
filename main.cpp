@@ -11,7 +11,6 @@ const int NUM_BETS = 5;
 double players_bank = 10;
 double players_bet_amount{};
 double players_bets[5][2] = {{1, players_bet_amount}, {1, players_bet_amount}, {1, players_bet_amount}, {0, players_bet_amount}, {0, players_bet_amount}}; //Update to test players bets
-
 double winning_bets[NUM_BETS][2] = {{0, 2}, {0, 3}, {0, 4}, {0, 0}, {0, 0}};
 
 /*
