@@ -7,6 +7,8 @@
 #include <string.h>
 #include <cstring>
 using namespace std;
+
+
 const int NUM_BETS = 5;
 double players_bank = 10;
 double players_bet_amount{};
