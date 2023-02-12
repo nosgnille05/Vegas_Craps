@@ -21,7 +21,6 @@ index 2: Twelve Field (12)
 index 3: n/a
 index 4: n/a
 
-
 */
 
 double ask_for_bet_amount(){
