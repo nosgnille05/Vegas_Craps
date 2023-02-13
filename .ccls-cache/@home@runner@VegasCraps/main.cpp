@@ -23,7 +23,6 @@ index 4: n/a
 
 
 
-
 */
 
 double ask_for_bet_amount(){
