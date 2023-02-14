@@ -24,7 +24,6 @@ index 4: n/a
 
 double ask_for_bet_amount(){
 
-
   double players_bet;
   cout << "How much would you like to bet? ";
   cin >> players_bet;
