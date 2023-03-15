@@ -84,7 +84,6 @@ void check_roll(double players_bets_arr[NUM_BETS][2], int players_dice_roll){
     if (is_basic_field_roll(players_dice_roll)){ 
       winning_bets[0][0] = 1;
 
-
       }
   }
   if (players_bets_arr[1][0] == 1){ 
