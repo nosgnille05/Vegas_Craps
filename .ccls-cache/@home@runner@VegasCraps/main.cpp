@@ -86,7 +86,6 @@ void check_roll(double players_bets_arr[NUM_BETS][2], int players_dice_roll){
 
 
 
-      
       }
   }
   if (players_bets_arr[1][0] == 1){ 
