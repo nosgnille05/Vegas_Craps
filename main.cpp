@@ -28,7 +28,6 @@ double ask_for_bet_amount(){
   cin >> players_bet;
 
 
-
   if (players_bet_amount > players_bank){
     cout << "Not enough funds!";
     exit(1);
