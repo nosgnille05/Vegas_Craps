@@ -30,7 +30,6 @@ double ask_for_bet_amount(){
     cout << "Not enough funds!";
     exit(1);
   }
-
   return players_bet;
 }
 
