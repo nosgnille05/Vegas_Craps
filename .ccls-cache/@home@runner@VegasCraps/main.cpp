@@ -31,7 +31,6 @@ double ask_for_bet_amount(){
     exit(1);
   }
 
-
   return players_bet;
 }
 
