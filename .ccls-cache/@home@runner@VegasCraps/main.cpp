@@ -46,7 +46,6 @@ bool is_basic_field_roll(int dice_roll){
   if (dice_roll == 3 || dice_roll == 4 || dice_roll == 9 || dice_roll == 10 || dice_roll == 11){
 
 
-    
     return true;
   }
   else return false;
