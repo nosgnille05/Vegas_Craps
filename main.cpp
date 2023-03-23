@@ -37,6 +37,9 @@ double ask_for_bet_amount(){
 void setBet(int bet_index){
   players_bets[bet_index][0] = 1;
 }
+
+
+
 void clearBet(int bet_index){
   players_bets[bet_index][0] = 0;
 }
