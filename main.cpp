@@ -100,7 +100,6 @@ void check_roll(double players_bets_arr[NUM_BETS][2], int players_dice_roll){
 }
 
 void payout_bets_on_checked_roll(double checked_roll_arr[NUM_BETS][2]){
-
   double players_payout{};
   if (checked_roll_arr[0][0] == 1){ //Basic Field Pays 1:1
     cout << "Player Wins Basic Field!" << endl;
